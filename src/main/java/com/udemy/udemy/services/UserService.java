@@ -33,8 +33,8 @@ public class UserService {
 		repo.deleteById(id);
 	}
 	
-	public User update(User obj){
-		User newObj = repo.findOne(obj.getId());
+	public User update(User obj) {
+		User newObj = findById(obj.getId());
 		updateData(newObj, obj);
 		return repo.save(newObj);
 	}
